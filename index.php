@@ -38,7 +38,10 @@
                   <a class="nav-link" href="index.php">User Login</a>
                 </li>
               <li class="nav-item">
-                <a class="nav-link" href="Admin/admin_login.php">Admin Login</a>
+                <a class="nav-link" href="admin_login.php">Admin Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="student_login.php">Student Login</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="signup.php"></span>Signup</a>
