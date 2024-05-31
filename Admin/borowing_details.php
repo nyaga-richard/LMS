@@ -47,11 +47,23 @@ $end_date = isset($_GET['end_date']) ? $_GET['end_date'] : '';
         die("Connection failed: " . mysqli_connect_error());
     }
     
-    $sql = "SELECT s.first_name, s.last_name, b.issue_date, bk.book_name 
-            FROM students s 
-            JOIN issued_books b ON s.student_id = b.student_id 
-            JOIN books bk ON bk.book_no = b.book_no
-            WHERE 1=1";
+    $sql = "SELECT 
+    s.first_name, 
+    s.last_name, 
+    br.borrow_date AS issue_date, 
+    bk.book_name 
+FROM 
+    students s 
+JOIN 
+    cards c ON s.student_id = c.student_id
+JOIN 
+    borrowed_resources br ON c.card_id = br.card_id 
+JOIN 
+    book_copies bc ON br.resource_id = bc.copy_id
+JOIN 
+    books bk ON bc.book_id = bk.book_id
+WHERE 
+    br.return_date IS NULL";
     
     if (!empty($search_query_book)) {
         $sql .= " AND bk.book_name LIKE '%$search_query_book%'";

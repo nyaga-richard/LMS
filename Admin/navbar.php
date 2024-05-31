@@ -75,11 +75,16 @@
                     <a class="dropdown-item" href="manage_students.php">Manage Students</a>
                 </div>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="borowing_details.php">Borrowing</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown">Cards</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="add_card.php">Issue Card</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="manage_cards.php">Manage Cards</a>
+                </div>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="add_card.php">Issue Card</a>
+                <a class="nav-link" href="borowing_details.php">Borrowing</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="issue_book.php">Issue Book</a>
